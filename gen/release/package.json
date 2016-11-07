@@ -1,7 +1,7 @@
 {
-  "name": "[[replace - name]]",
+  "name": "multi_test",
   "version": "0.0.0",
-  "description": "[[replace - description]]",
+  "description": "write templated tests based on input and output data",
   "main": "index.js",
   "scripts": {
     "test": "ava"

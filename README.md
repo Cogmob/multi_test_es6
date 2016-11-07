@@ -1,13 +1,13 @@
-[[replace - short description]]
+write templated tests based on input and output data
 
 # usage
 
 ```shell
-npm install --save [[replace - name]]
+npm install --save multi_test
 ```
 
 ```js
-const [[replace - name]] = require('[[replace - name]]');
+const multi_test = require('multi_test');
 
-[[replace - name.whatever]]
+??
 ```
