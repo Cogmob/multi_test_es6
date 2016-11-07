@@ -35,5 +35,9 @@
     "tap": true,
     "verbose": true,
     "powerAssert": true
+  },
+  "dependencies": {
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1"
   }
 }
