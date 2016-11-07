@@ -8,7 +8,7 @@ test('test pass', t => {
 });
 
 test('test fail', t => {
-    t.plan(1);
+    t.plan(2);
     const res = func();
     t.deepEqual({a:[1, 3]}, {a:res});
 });

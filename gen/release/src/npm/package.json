@@ -1,7 +1,7 @@
 {
-  "name": "node_base",
+  "name": "multi_test",
   "version": "0.0.0",
-  "description": "base repo for node projects",
+  "description": "write templated tests based on input and output data",
   "main": "index.js",
   "scripts": {
     "test": "ava"

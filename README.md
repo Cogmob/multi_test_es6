@@ -7,7 +7,11 @@ npm install --save multi_test
 ```
 
 ```js
-const multi_test = require('multi_test');
+const mt = require('multi_test');
 
-??
+mt(
+        name = 'test_name',
+        glob = ['~', 'test_dir', sub_dir', '*'],
+        run = (t, filename, contents) => {
+            t.equal('done', contents); });
 ```
