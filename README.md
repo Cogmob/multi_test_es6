@@ -14,6 +14,6 @@ mt(
         groups: ['*txt', '*/', '*2.cpp'],
         white_list: ['04'],
         black_list: ['green'],
-        run:  (t, result_filenames, result_contents) => {
+        run: (t, result_filenames, result_contents) => {
             t.equal('done', result_contents['txt']);});
 ```
