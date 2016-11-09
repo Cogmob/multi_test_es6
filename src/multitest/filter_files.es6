@@ -1,9 +1,9 @@
 const glob = require('glob');
 
-filter_files = (
-        glob_string,
-        whitelist,
-        blacklist,
-        groups) => {
-    const files = glob.sync(glob_string);
+const filter_files = i => {
+    const {glob_string, whitelist, blacklist, groups, cwd} = i;
+    const files = glob.sync(glob_string, {cwd: cwd});
+    return [files];
 }
+
+module.exports = filter_files;
