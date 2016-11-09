@@ -10,10 +10,10 @@ npm install --save multi_test
 const mt = require('multi_test');
 
 mt(
-        glob: ['~', 'test_dir', sub_dir', '*'],
+        glob: ['~', 'test_dir', 'sub_dir', '*'],
         groups: ['*txt', '*/', '*2.cpp'],
         white_list: ['04'],
         black_list: ['green'],
-        run: (t, result_filenames, result_contents) => {
-            t.equal('done', result_contents['txt']); });
+        run:  (t, result_filenames, result_contents) => {
+            t.equal('done', result_contents['txt']);});
 ```
