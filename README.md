@@ -6,7 +6,7 @@ write templated tests based on input and output data
 npm install --save multi_test
 ```
 
-```js
+```es6
 const mt = require('multi_test');
 
 mt(
