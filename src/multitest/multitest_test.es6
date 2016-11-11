@@ -5,7 +5,7 @@ const p = require('path');
 const path = p.join('src', 'multitest');
 
 tape_module.test('two groups', t => {
-    t.plan(5);
+    t.plan(6);
 
     const fake_tape = {
         test: (name, func) => {func(fake_tape)},
@@ -32,7 +32,7 @@ tape_module.test('two groups', t => {
                            test_name]);}});});
 
 tape_module.test('one group', t => {
-    t.plan(5);
+    t.plan(6);
 
     const fake_tape = {
         test: (name, func) => {func(fake_tape)},

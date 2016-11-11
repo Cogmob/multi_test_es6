@@ -1,6 +1,6 @@
 {
   "name": "multi_test",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "write templated tests based on input and output data",
   "main": "index.js",
   "scripts": {

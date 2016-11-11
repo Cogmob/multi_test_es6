@@ -5,7 +5,7 @@ write templated tests based on input and output data
 ## example
 
 ```es6
-const mt = require('multi_test');
+const mt = require('multi_test').tape;
 
 mt({
     path: '(a|b)*',
@@ -44,12 +44,12 @@ Here is the code needed to perform those three tests:
 mt({
     path: 'data/*before',
     make_groups: path => {
-        const root = path.replace('before','');
+        const root = path.replace('before', '');
         return {
             before: path,
             after: root + 'after'}),
     test_func: (test_name, contents, tape) => {
-        tape.equal('pre-' + contents['before'], contents['after'];}});
+        tape.equal(prefix(contents['before']), contents['after'];}});
 ```
 
 A big advantage of this system, apart from brevity, is that adding further tests
