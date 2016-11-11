@@ -17,7 +17,7 @@ var multitest = function multitest(t, i) {
         groups.forEach(function (group) {
             var test_name = group[Object.keys(group)[0]]['filename'];
             t.test(test_name, function (a) {
-                return test_func({ test_name: test_name, group: group, a: a });
+                return test_func(test_name, group, a);
             });
         });
     });

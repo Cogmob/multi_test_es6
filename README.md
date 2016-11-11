@@ -9,11 +9,22 @@ npm install --save multi_test
 ```es6
 const mt = require('multi_test');
 
-mt(
-        glob: ['~', 'test_dir', 'sub_dir', '*'],
-        groups: ['*txt', '*/', '*2.cpp'],
-        white_list: ['04'],
-        black_list: ['green'],
-        run: (t, result_filenames, result_contents) => {
-            t.equal('done', result_contents['txt']);});
+mt({
+    path: '(a|b)*',
+    test_func: (test_name, group, tape) => {
+        tape.equal('done', group['txt']);}});
+```
+
+# longer example
+
+```es6
+mt({
+    cwd: 'subdir/subdir2',
+    filters: [/^...$/],
+    negative_filters: [/not/],
+    make_groups: path => ({
+            a: path,
+            b: path + 'b'}),
+    test_func: (test_name, group, tape) => {
+        tape.equal('done', group['txt']);}});
 ```

@@ -25,13 +25,7 @@ tape_module.test('four tests', function (t) {
                 a: path,
                 b: path + 'b' };
         },
-        test_func: function test_func(i) {
-            var test_name = i.test_name,
-                group = i.group,
-                tape = i.tape;
-
-            console.log('asdf');
-            console.log(group);
+        test_func: function test_func(test_name, group, tape) {
             t.ok(['aaa', 'bbb'].includes(test_name));
             t.deepEqual(group, {
                 aaa: {

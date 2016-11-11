@@ -9,7 +9,7 @@ const multitest = (t, i) => {
     load_files(cwd, filter_files(i), groups => {
         groups.forEach(group => {
             const test_name = group[Object.keys(group)[0]]['filename'];
-            t.test(test_name, a => test_func({test_name, group, a}));});});
+            t.test(test_name, a => test_func(test_name, group, a));});});
 
     t.end();
 };
