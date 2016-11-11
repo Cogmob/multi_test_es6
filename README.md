@@ -2,7 +2,7 @@
 
 write templated tests based on input and output data
 
-# example
+## example
 
 ```es6
 const mt = require('multi_test');
@@ -13,7 +13,7 @@ mt({
         tape.equal('done', contents['contents']);}});
 ```
 
-# usage
+## usage
 
 Multi\_test allows you to write better unit tests. For each test, store inputs
 and expected outputs in separate files. Then use globbing and filtering to load
@@ -55,33 +55,33 @@ mt({
 A big advantage of this system, apart from brevity, is that adding further tests
 does not require modifying code.
 
-# parameters
+## parameters
 
-## cwd
+### cwd
 
 The starting point when searching for files. Default: '.'.
 
-## path
+### path
 
 A string which is pattern matched to files using globbing. This is used to find
 the initial set of files before filtering. Default: '\*\*'.
 
-## filters
+### filters
 
 An array of javascript regular expressions. Any files which match the path glob
 which do not match every regex are discarded. Default: [].
 
-## negative_filters
+### negative_filters
 
 An array of javascript regular expressions. Any file which matches the path glob
 but also matches a regex from here are discarded. Default: [].
 
-## make_groups
+### make_groups
 
 A function which takes the path of a matching file after filtering, and returns
 an object. The values of this object must be valid file paths.
 
-## test_func
+### test_func
 
 A function which is passed the contents of the files as specified above and the
 tape testing object. It should perform a test using these.
@@ -100,7 +100,7 @@ mt({
         tape.equal('done', group['txt']);}});
 ```
 
-# installation
+## installation
 
 
 ```shell
