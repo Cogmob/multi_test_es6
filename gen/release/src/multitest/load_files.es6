@@ -2,7 +2,7 @@ const read_files = require('read-multiple-files');
 const get_filenames = require('./get_filenames');
 const path = require('path');
 
-const load_files_test = (cwd, groups, cb) => {
+const load_files = (cwd, groups, cb) => {
     const filenames = get_filenames(groups);
     const full_filenames = filenames.map(i => path.join(cwd, i));
     read_files(full_filenames, 'utf8', (err, contents) => {
@@ -19,4 +19,4 @@ const load_files_test = (cwd, groups, cb) => {
 
         cb(groups)});};
 
-module.exports = load_files_test;
+module.exports = load_files;

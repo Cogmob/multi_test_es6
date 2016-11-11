@@ -12,7 +12,7 @@ const mt = require('multi_test');
 mt({
     path: '(a|b)*',
     test_func: (test_name, contents, tape) => {
-        tape.equal('done', contents);}});
+        tape.equal('done', contents['contents']);}});
 ```
 
 # longer example

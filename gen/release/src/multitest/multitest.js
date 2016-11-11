@@ -5,17 +5,17 @@ var filter_files = require('./filter_files');
 var load_files = require('./load_files');
 
 var multitest = function multitest(t, i) {
-    var path = i.path,
-        filters = i.filters,
-        negative_filters = i.negative_filters,
-        make_groups = i.make_groups,
-        cwd = i.cwd,
+    var cwd = i.cwd,
         test_func = i.test_func;
 
 
     load_files(cwd, filter_files(i), function (groups) {
         groups.forEach(function (group) {
-            var test_name = group[Object.keys(group)[0]]['filename'];
+            var keys = Object.keys(group);
+            var test_name = group[keys[0]]['filename'];
+            if (keys.length === 1) {
+                group = group[keys[0]];
+            }
             t.test(test_name, function (a) {
                 return test_func(test_name, group, a);
             });

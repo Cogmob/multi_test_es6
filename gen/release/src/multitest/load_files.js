@@ -4,7 +4,7 @@ var read_files = require('read-multiple-files');
 var get_filenames = require('./get_filenames');
 var path = require('path');
 
-var load_files_test = function load_files_test(cwd, groups, cb) {
+var load_files = function load_files(cwd, groups, cb) {
     var filenames = get_filenames(groups);
     var full_filenames = filenames.map(function (i) {
         return path.join(cwd, i);
@@ -28,4 +28,4 @@ var load_files_test = function load_files_test(cwd, groups, cb) {
     });
 };
 
-module.exports = load_files_test;
+module.exports = load_files;
