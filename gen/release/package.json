@@ -25,8 +25,7 @@
     "gulp-debug": "^2.1.2",
     "gulp-sequence": "^0.4.6",
     "tap": "^7.1.2",
-    "tap-difflet": "^0.7.0",
-    "tape": "^4.6.2"
+    "tap-difflet": "^0.7.0"
   },
   "ava": {
     "files": [
@@ -35,5 +34,12 @@
     "tap": true,
     "verbose": true,
     "powerAssert": true
+  },
+  "dependencies": {
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1",
+    "glob-to-regexp": "^0.3.0",
+    "read-multiple-files": "^1.1.1",
+    "tape": "^4.6.2"
   }
 }
