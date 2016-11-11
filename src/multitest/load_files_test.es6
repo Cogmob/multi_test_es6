@@ -1,16 +1,15 @@
 const t = require('tape');
 const func = require('./load_files');
-var path = require('path');
+const path = require('path');
 
 t.test('four files', t => {
     t.plan(1);
     func(
-            [{
-                    a: path.join(__dirname, 'test_data', 'aaa'),
-                    b: path.join(__dirname, 'test_data', 'aaab')}, {
-                    a: path.join(__dirname, 'test_data', 'bbb'),
-                    b: path.join(__dirname, 'test_data', 'bbbb')}],
+            path.join(__dirname, 'test_data'),
+            [{ a: 'aaa', b: 'aaab'}, { a: 'bbb', b: 'bbbb'}],
             files => t.deepEqual(files, [{
-                a: 'contentsaaa\n', b: 'contentsaaab\n'}, {
-                a: 'contentsbbb\n', b: 'contentsbbbb\n'}]));
+                a: {contents: 'contentsaaa\n', filename: 'aaa'},
+                b: {contents: 'contentsaaab\n', filename: 'aaab'}}, {
+                a: {contents: 'contentsbbb\n', filename: 'bbb'},
+                b: {contents: 'contentsbbbb\n', filename: 'bbbb'}}]));
 });

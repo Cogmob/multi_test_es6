@@ -10,7 +10,7 @@ t.test('glob only', t => {
             cwd: path + '/test_data'});
     t.deepEqual(
             res,
-            ['aaa', 'aaab', 'bbb', 'bbbb', 'folder_1', 'folder_1/lll', 'folder_1/llm', 'folder_2', 'folder_2/nna', 'folder_2/nnnn', 'not', 'not/cccc', 'not/dddddd']);
+            [{all: 'aaa'}, {all: 'aaab'}, {all: 'bbb'}, {all: 'bbbb'}, {all: 'folder_1'}, {all: 'folder_1/lll'}, {all: 'folder_1/llm'}, {all: 'folder_2'}, {all: 'folder_2/nna'}, {all: 'folder_2/nnnn'}, {all: 'not'}, {all: 'not/cccc'}, {all: 'not/dddddd'}]);
 });
 
 t.test('white/black list', t => {
@@ -22,7 +22,7 @@ t.test('white/black list', t => {
             cwd: path + '/test_data'});
     t.deepEqual(
             res,
-            ['folder_1/lll']);
+            [{all: 'folder_1/lll'}]);
 });
 
 t.test('2 groups', t => {

@@ -13,7 +13,7 @@ const filter_files = i => {
    	files = files.filter(filename => negative_filters.reduce(
             (acc, regex) => acc && !regex.test(filename), true));
     if (!make_groups) {
-        return files;}
+        return files.map(i => ({all: i}));}
     return files.map(make_groups);
 }
 
