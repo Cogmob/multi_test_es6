@@ -10,5 +10,7 @@ t.test('four files', t => {
                     b: path.join(__dirname, 'test_data', 'aaab')}, {
                     a: path.join(__dirname, 'test_data', 'bbb'),
                     b: path.join(__dirname, 'test_data', 'bbbb')}],
-            files => t.deepEqual(files, []));
+            files => t.deepEqual(files, [{
+                a: 'contentsaaa\n', b: 'contentsaaab\n'}, {
+                a: 'contentsbbb\n', b: 'contentsbbbb\n'}]));
 });
