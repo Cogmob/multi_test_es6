@@ -5,7 +5,8 @@ var filter_files = require('./filter_files');
 var load_files = require('./load_files');
 
 var multitest = function multitest(t, i) {
-    var cwd = i.cwd,
+    var _i$cwd = i.cwd,
+        cwd = _i$cwd === undefined ? '.' : _i$cwd,
         test_func = i.test_func;
 
 
@@ -16,13 +17,13 @@ var multitest = function multitest(t, i) {
             if (keys.length === 1) {
                 group = group[keys[0]];
             }
-            t.test(test_name, function (a) {
-                return test_func(test_name, group, a);
-            });
+            var wrapped_test_func = function wrapped_test_func(a) {
+                test_func(test_name, group, a);
+                a.end();
+            };
+            t.test(test_name, wrapped_test_func);
         });
     });
-
-    t.end();
 };
 
 var tape = function tape(i) {

@@ -49,7 +49,9 @@ mt({
             before: path,
             after: root + 'after'}),
     test_func: (test_name, contents, tape) => {
-        tape.equal(prefix(contents['before']), contents['after'];}});
+        tape.equal(
+            prefix(contents['before']['contents']),
+            contents['after']['contents']);}});
 ```
 
 A big advantage of this system, apart from brevity, is that adding further tests
@@ -86,19 +88,10 @@ an object. The values of this object must be valid file paths.
 A function which is passed the contents of the files as specified above and the
 tape testing object. It should perform a test using these.
 
-Here is another example:
+### only
 
-```es6
-mt({
-    cwd: 'subdir/subdir2',
-    filters: [/^...$/],
-    negative_filters: [/not/],
-    make_groups: path => ({
-            a: path,
-            b: path + 'b'}),
-    test_func: (test_name, group, tape) => {
-        tape.equal('done', group['txt']);}});
-```
+Calls the tests with the 'only' method. Therefore, this will only work if the
+filters produe a unique output.
 
 ## installation
 

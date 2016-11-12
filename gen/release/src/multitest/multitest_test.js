@@ -7,7 +7,7 @@ var p = require('path');
 var path = p.join('src', 'multitest');
 
 tape_module.test('two groups', function (t) {
-    t.plan(5);
+    t.plan(6);
 
     var fake_tape = {
         test: function test(name, func) {
@@ -39,7 +39,7 @@ tape_module.test('two groups', function (t) {
 });
 
 tape_module.test('one group', function (t) {
-    t.plan(5);
+    t.plan(6);
 
     var fake_tape = {
         test: function test(name, func) {
