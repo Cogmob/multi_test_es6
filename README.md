@@ -88,11 +88,6 @@ an object. The values of this object must be valid file paths.
 A function which is passed the contents of the files as specified above and the
 tape testing object. It should perform a test using these.
 
-### only
-
-Calls the tests with the 'only' method. Therefore, this will only work if the
-filters produe a unique output.
-
 ## installation
 
 
