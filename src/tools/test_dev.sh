@@ -1,4 +1,5 @@
 #!/bin/bash
 cd ../../gen/dev
 clear
-node_modules/.bin/tape src/**/*$1 | node_modules/.bin/tap-difflet -p
+filename="$(echo $1 | sed 's/\.es6//g')"
+node_modules/.bin/tape src/**/*$filename.js | node_modules/.bin/tap-difflet -p

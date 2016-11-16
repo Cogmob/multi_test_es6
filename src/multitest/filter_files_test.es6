@@ -1,6 +1,7 @@
 const func = require('./filter_files');
 const t = require('tape');
 const p = require('path');
+const eq = require('deep-equal');
 
 const path = p.join('src', 'multitest');
 
@@ -9,9 +10,10 @@ t.test('glob only', t => {
     const res = func({
             path: '**',
             cwd: p.join(path, 'test_data')});
-    t.deepEqual(
-            res,
-            [{all: 'aaa'}, {all: 'aaab'}, {all: 'bbb'}, {all: 'bbbb'}, {all: 'folder_1'}, {all: 'folder_1/lll'}, {all: 'folder_1/llm'}, {all: 'folder_2'}, {all: 'folder_2/nna'}, {all: 'folder_2/nnnn'}, {all: 'not'}, {all: 'not/cccc'}, {all: 'not/dddddd'}]);
+    const expected = [{all: 'aaa'}, {all: 'aaab'}, {all: 'bbb'}, {all: 'bbbb'}, {all: 'folder_1'}, {all: 'folder_1/lll'}, {all: 'folder_1/llm'}, {all: 'folder_2'}, {all: 'folder_2/nna'}, {all: 'folder_2/nnnn'}, {all: 'not'}, {all: 'not/cccc'}, {all: 'not/dddddd'}];
+    if (!eq(res, expected)) {
+        debugger;}
+    t.deepEqual(res, expected);
 });
 
 t.test('white/black list', t => {
